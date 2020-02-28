@@ -1,13 +1,19 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField'
+import styles from './Homepage.module.scss'
+import HashIcon from '../images/hash.svg'
+import './Homepage.module.scss'
+import Searchbar from './Searchbar.js'
 
 function Homepage() {
     return (
         <div>
-            Homepage
-            <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="hashtag-field" label="Outlined" variant="outlined" />
-            </form>
+            <div className={styles.hashicon}>
+                <img src={HashIcon}/>
+            </div>
+            <div className={styles.maintext}>
+                This is some example text right length
+            </div>
+            <Searchbar/>
         </div>
     )
 }
