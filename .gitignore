@@ -26,3 +26,8 @@ yarn-error.log*
 .idea/misc.xml
 .idea/modules.xml
 .idea/sentiment_ui.iml
+public/robots.txt
+public/manifest.json
+public/logo512.png
+public/logo192.png
+public/favicon.ico
