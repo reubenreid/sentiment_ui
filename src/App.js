@@ -10,7 +10,9 @@ function App() {
         <div className="App">
             <Header/>
             {/*<Homepage/>*/}
-            <Map/>
+            <div className="Map">
+                <Map/>
+            </div>
         </div>
     );
 }
