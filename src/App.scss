@@ -2,12 +2,19 @@
   text-align: center;
   background-color: #55BFE1;
   color: whitesmoke;
-  width: 1440px;
-  height: 920px;
+  width: 1345px;
+  height: 720px;
 }
 
 .Map {
-  height: 90%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.Header {
+  background-color: #282c34;
+  background-color: rgb(30, 35 ,31);
 }
 
 .App-logo {

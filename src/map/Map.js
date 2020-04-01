@@ -33,6 +33,7 @@ const data =
 
 
 class Map extends React.Component {
+
     render() {
 
         const layer = new HexagonLayer({
@@ -56,8 +57,10 @@ class Map extends React.Component {
                 initialViewState={initialViewState}
                 controller={true}
                 layers={layer}
+                width={1345}
+                height={720}
             >
-                <StaticMap {...viewPort} mapStyle={'mapbox://styles/mapbox/dark-v9'}
+                <StaticMap  {...viewPort} mapStyle={'mapbox://styles/mapbox/dark-v9'}
                            mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}/>
             </DeckGL>
         );

@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './Homepage.module.scss'
-import HashIcon from '../images/hash.svg'
+import HomeLogo from '../images/Home_logo.png'
 import './Homepage.module.scss'
 import Searchbar from './Searchbar.js'
 
 function Homepage() {
     return (
-        <div>
+        <div className={styles.maindiv}>
             <div className={styles.hashicon}>
-                <img src={HashIcon}/>
+                <img src={HomeLogo}/>
             </div>
             <div className={styles.maintext}>
                 This is some example text right length
             </div>
-            <Searchbar/>
+            {/*<Searchbar/>*/}
         </div>
     )
 }
