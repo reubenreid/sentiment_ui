@@ -3,7 +3,7 @@ import DeckGL from '@deck.gl/react';
 import {HexagonLayer} from '@deck.gl/aggregation-layers';
 import {StaticMap} from 'react-map-gl';
 import {csv} from 'd3';
-import csvData from '../data/uk_online_data.csv';
+import csvData from '../data/uk_online_data_full.csv';
 
 
 const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoicmV1YmVucmVpZCIsImEiOiJjazdidWRldWwwN2g3M2hwYTV4czhwMDB1In0.iPL0MGIDZ864MPRG-wDarg';
@@ -28,12 +28,13 @@ const viewPort = {
     zoom: 4
 }
 
-const data =
-    [
-        {COORDINATES: [-0.15012839, 51.50518452]},
-        {COORDINATES: [-0.15012839, 51.50518452]},
-    ]
+// const data =
+//     [
+//         {COORDINATES: [-0.15012839, 51.50518452] [-0.1012839, 48.50518452]},
+//
+//     ]
 
+const data = [-0.15012839, 51.50518452]
 
 
 class Map extends React.Component {
@@ -53,9 +54,8 @@ class Map extends React.Component {
             if (err) {
                 console.log(err)
             }
-            this.setState({data: data.map( d => [
-                {COORDINATES: [d.Longitude, d.Latitude]}
-                ])
+            this.setState({data: data.map( d => [d.Longitude, d.Latitude]
+                )
             })
         });
         console.log(this.state.data)
@@ -67,12 +67,10 @@ class Map extends React.Component {
             id: 'hexagon-layer',
             data: this.state.data !== '' ? this.state.data: data,
             //data: data,
-            // elevationRange: [0, 1000],
-            // elevationScale: 250,
+            elevationRange: [0, 3000],
+            elevationScale: 50,
             extruded: true,
-            opacity: 1,
             radius: 1000,
-            upperPercentile: 100,
             coverage: 1,
             getPosition: d => d.COORDINATES
         });
@@ -89,7 +87,9 @@ class Map extends React.Component {
                 height={640}
             >
                 {console.log(layer)}
-                <StaticMap  {...viewPort} mapStyle={'mapbox://styles/mapbox/dark-v9'}
+                <StaticMap  {...viewPort}
+                            mapStyle={'mapbox://styles/mapbox/dark-v9'}
+                            preventStyleDiffing={true}
                             mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}/>
             </DeckGL>
         );
