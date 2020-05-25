@@ -10,10 +10,7 @@ function Homepage() {
             <div className={styles.hashicon}>
                 <img src={HomeLogo}/>
             </div>
-            <div className={styles.maintext}>
-                This is some example text right length
-            </div>
-            {/*<Searchbar/>*/}
+            <Searchbar/>
         </div>
     )
 }
