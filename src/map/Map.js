@@ -7,7 +7,7 @@ import jsonData from '../data/manhattan.json';
 import csvData from '../data/uk_online_data_full_conv.json'
 
 
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoicmV1YmVucmVpZCIsImEiOiJjazdidWRldWwwN2g3M2hwYTV4czhwMDB1In0.iPL0MGIDZ864MPRG-wDarg';
+const MAPBOX_ACCESS_TOKEN = '******';
 
 const ambientLight = new AmbientLight({
     color: [255, 255, 255],
